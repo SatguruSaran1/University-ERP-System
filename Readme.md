@@ -1,11 +1,10 @@
 <div align="center">
 
-# University ERP System (Java + Swing)
+# University ERP System
 
 
 </div>
 
----
 
 ##  Project Overview
 
@@ -198,14 +197,13 @@ Make sure the following are installed before you begin:
 
 **Using Git**
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com//SatguruSaran1/University-ERP-System.git
+cd University-ERP-System
 ```
 
 **Download ZIP**
-1. On the GitHub repository page, click the green **Code** button.
-2. Select **Download ZIP**.
-3. Extract the ZIP file and open the extracted folder (`ERP-System-main`) in your terminal or IDE.
+Select **Download ZIP**.
+Extract the ZIP file and open the extracted folder (`ERP-System-main`) in your terminal or IDE.
 
 ### Set Up the Database
 
