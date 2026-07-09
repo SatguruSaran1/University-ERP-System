@@ -12,17 +12,17 @@ The University ERP System is a comprehensive desktop application that manages th
 
 Built using:
 
-- **Java (Swing)** for UI  
-- **MySQL** for persistent storage  
-- **BCrypt** for secure authentication  
-- **Dual-Database Architecture**
+- Java (Swing) for UI  
+- MySQL for persistent storage  
+- BCrypt for secure authentication  
+- Dual-Database Architecture
 
 ###  Key Architectural Features
 
-- **Natural Key Design:** Uses **Usernames** & **Course Codes** as identifiers.
-- **Role-Based Access Control (RBAC):** Separate access for Students, Instructors, and Admins.
-- **Secure Authentication:** Passwords stored as BCrypt hashes.
-- **Deployment-Ready Academic Logic:** Configured for **Monsoon 2025**.
+- Natural Key Design: Uses Usernames & Course Codes as identifiers.
+- Role-Based Access Control (RBAC): Separate access for Students, Instructors, and Admins.
+- Secure Authentication: Passwords stored as BCrypt hashes.
+- Deployment-Ready Academic Logic: Configured for Monsoon 2025.
 
 ###  Academic Logic (Monsoon 2025)
 
@@ -45,13 +45,13 @@ The system uses two separate databases:
 
 Stores secure account information.
 
-**Table: `users_auth`**
+Table: `users_auth`
 
-- **`username`** - Primary Key
-- **`full_name`** - Display Name
-- **`role`** - Student / Instructor / Admin
-- **`password_hash`** - BCrypt Hash
-- **`status`** - Account Status
+- `username` - Primary Key
+- `full_name` - Display Name
+- `role` - Student / Instructor / Admin
+- `password_hash` - BCrypt Hash
+- `status` - Account Status
 
 ---
 
@@ -59,18 +59,18 @@ Stores secure account information.
 
 Stores academic data and transactions.
 
-**Key Tables**
+Key Tables
 
-- **`students`** - Student profiles
-- **`instructors`** - Faculty profiles
-- **`admins`** - Admin profiles
-- **`courses`** - Course catalog
-- **`sections`** - Course offerings
-- **`enrollments`** - Student registrations
-- **`grades`** - Assessment scores
-- **`assessments`** - Mark breakdown
-- **`grading_scale`** - Grade thresholds
-- **`academic_history`** - Archived records
+- `students` - Student profiles
+- `instructors` - Faculty profiles
+- `admins` - Admin profiles
+- `courses` - Course catalog
+- `sections` - Course offerings
+- `enrollments` - Student registrations
+- `grades` - Assessment scores
+- `assessments` - Mark breakdown
+- `grading_scale` - Grade thresholds
+- `academic_history` - Archived records
 
 ---
 
@@ -92,9 +92,9 @@ src/
 
 ##  High-Level Features & Logic Enforcement
 
-###  **Role-Based Functionality**
+###  Role-Based Functionality
 
-#### **Student**
+#### Student
 
 * Browse full course catalog with searching.
 * Register for sections
@@ -104,15 +104,15 @@ src/
 * View personal timetable.
 * View grades & download transcript (CSV).
 
-#### **Instructor**
+#### Instructor
 
 * View assigned sections for the active term.
 * Manage gradebooks with custom components
   (Quiz, Midsem, Endsem…)
 * View class analytics:
-  **Average, Highest, Lowest scores**.
+  Average, Highest, Lowest scores.
 
-#### **Admin**
+#### Admin
 
 * Manage all users (Create / Edit / Delete Students & Instructors).
 * Manage course catalog (Create Courses).
@@ -135,21 +135,21 @@ Final grade is computed dynamically using the weighted sum of all instructor-def
 
 ###  CGPA / SGPA Grade Points
 
-- **A+** - 10
-- **A** - 10
-- **A-** - 9
-- **B** - 8
-- **B-** - 7
-- **C** - 6
-- **D** - 5
-- **F** - 0
+- A+ - 10
+- A - 10
+- A- - 9
+- B - 8
+- B- - 7
+- C - 6
+- D - 5
+- F - 0
 
 ---
 ##  Role & Maintenance Enforcement
 
 Security is enforced strictly at the Service Layer, making UI bypass impossible.
 
-### **Role Checks**
+### Role Checks
 
 Every write operation (saveGrades, createCourse, updateSection…) calls:
 
@@ -158,25 +158,25 @@ AccessControl.checkWriteAccess(role)
 ```
 
 If a Student tries calling an Instructor-only action →
- **SecurityException**
+ SecurityException
 
-### **Maintenance Mode**
+### Maintenance Mode
 
-When Admin turns **Maintenance Mode ON**:
+When Admin turns Maintenance Mode ON:
 
 * A database flag is updated.
-* All **INSERT / UPDATE / DELETE** from Students & Instructors are blocked instantly.
-* A **UI poller refreshes every 5 seconds** and shows a red “System Locked” banner.
+* All INSERT / UPDATE / DELETE from Students & Instructors are blocked instantly.
+* A UI poller refreshes every 5 seconds and shows a red “System Locked” banner.
 
 ---
 
 ##  Features
 
-* **CSV Transcript Export** for students.
-* **Database Backup & Restore** tools for admin.
-* **Change Password** with secure validation.
-* **Natural Key Architecture**:
-  Uses **Usernames & Course Codes** instead of integer IDs for cleaner integrity & easier deployment.
+* CSV Transcript Export for students.
+* Database Backup & Restore tools for admin.
+* Change Password with secure validation.
+* Natural Key Architecture:
+  Uses Usernames & Course Codes instead of integer IDs for cleaner integrity & easier deployment.
 
 ---
 
@@ -186,23 +186,23 @@ When Admin turns **Maintenance Mode ON**:
 
 Make sure the following are installed before you begin:
 
-- **Java JDK** - 17 or higher - [adoptium.net](https://adoptium.net/)
-- **Maven** - 3.8+ - [maven.apache.org](https://maven.apache.org/download.cgi)
-- **MySQL Server** - 8.0+ - [dev.mysql.com](https://dev.mysql.com/downloads/mysql/)
-- **Git** - Any (Optional) - [git-scm.com](https://git-scm.com/)
+- Java JDK - 17 or higher - [adoptium.net](https://adoptium.net/)
+- Maven - 3.8+ - [maven.apache.org](https://maven.apache.org/download.cgi)
+- MySQL Server - 8.0+ - [dev.mysql.com](https://dev.mysql.com/downloads/mysql/)
+- Git - Any (Optional) - [git-scm.com](https://git-scm.com/)
 
 *Ensure you have added MySQL to your PATH.*
 
 ###  Download from GitHub
 
-**Using Git**
+Using Git
 ```bash
 git clone https://github.com//SatguruSaran1/University-ERP-System.git
 cd University-ERP-System
 ```
 
-**Download ZIP**
-Select **Download ZIP**.
+Download ZIP
+Select Download ZIP.
 Extract the ZIP file and open the extracted folder (`ERP-System-main`) in your terminal or IDE.
 
 ### Set Up the Database
@@ -223,21 +223,21 @@ This creates:
 
 ### Configure Your MySQL Password
 
-Open the following two files and replace `YOUR_MYSQL_PASSWORD` with **your** MySQL root password:
+Open the following two files and replace `YOUR_MYSQL_PASSWORD` with your MySQL root password:
 
-**File 1:** `src/edu/univ/erp/data/DatabaseManager.java` (Line 22)
+File 1: `src/edu/univ/erp/data/DatabaseManager.java` (Line 22)
 ```java
 private static final String DB_PASS = "YOUR_MYSQL_PASSWORD";
 ```
 
-**File 2:** `src/edu/univ/erp/util/DBConnection.java` (Line 12)
+File 2: `src/edu/univ/erp/util/DBConnection.java` (Line 12)
 ```java
 private static final String DB_PASS = "YOUR_MYSQL_PASSWORD";
 ```
 
 ###  Build & Run
 
-**If Maven is installed globally:**
+If Maven is installed globally:
 
 ```bash
 # Compile
@@ -247,7 +247,7 @@ mvn compile
 mvn exec:java -Dexec.mainClass=edu.univ.erp.Main
 ```
 
-**If Maven is NOT installed globally** (e.g. using VS Code with the Java extension), use the bundled Maven:
+If Maven is NOT installed globally (e.g. using VS Code with the Java extension), use the bundled Maven:
 
 ```bash
 # Find your bundled mvn path, then:
@@ -261,21 +261,21 @@ Alternatively, you can run `src/edu/univ/erp/Main.java` directly from your IDE (
 
 ##  Test Accounts
 
-The application ships with the following test accounts. **All passwords are `India@123`.**
+The application ships with the following test accounts. All passwords are `India@123`.
 
-- **Admin** - `admin` - `India@123`
-- **Student** - `student_alice` - `India@123`
-- **Student** - `student_bob` - `India@123`
-- **Instructor** - `prof_jones` - `India@123`
-- **Instructor** - `prof_smith` - `India@123`
+- Admin - `admin` - `India@123`
+- Student - `student_alice` - `India@123`
+- Student - `student_bob` - `India@123`
+- Instructor - `prof_jones` - `India@123`
+- Instructor - `prof_smith` - `India@123`
 
->  These are the **app login** passwords, separate from your MySQL password.
+>  These are the app login passwords, separate from your MySQL password.
 
 ---
 
 ##  FULL DEPLOYMENT SQL SCRIPT (`university_setup.sql`)
 
->  **Copy-Paste & Run Entire Script in MySQL Workbench**
+>  Copy-Paste & Run Entire Script in MySQL Workbench
 
 ```sql
 
