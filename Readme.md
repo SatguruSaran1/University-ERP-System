@@ -8,7 +8,7 @@
 
 ##  Project Overview
 
-The **University ERP System** is a comprehensive desktop application that manages the academic workflow of a university, including users, courses, enrollments, and grading.
+The University ERP System is a comprehensive desktop application that manages the academic workflow of a university, including users, courses, enrollments, and grading.
 
 Built using:
 
@@ -26,18 +26,18 @@ Built using:
 
 ###  Academic Logic (Monsoon 2025)
 
-- Only **Odd Semesters (1, 3, 5, 7)** are active.
+- Only Odd Semesters (1, 3, 5, 7) are active.
 - Program Limits:
-  - **B.Tech:** Max 8 Semesters
-  - **M.Tech:** Max 4 Semesters
-  - **PhD:** No fixed limit
+  - B.Tech: Max 8 Semesters
+  - M.Tech: Max 4 Semesters
+  - PhD: No fixed limit
 - Students exceeding limits are flagged for graduation/archival.
 
 ---
 
 ##  Database Design & Schema
 
-The system uses **two separate databases**:
+The system uses two separate databases:
 
 ---
 
@@ -96,18 +96,18 @@ src/
 
 #### **Student**
 
-* Browse full **course catalog** with searching.
+* Browse full course catalog with searching.
 * Register for sections
    Checks capacity
    Prevents duplicate enrollment
 * Drop sections before deadlines.
-* View personal **timetable**.
-* View grades & **download transcript (CSV)**.
+* View personal timetable.
+* View grades & download transcript (CSV).
 
 #### **Instructor**
 
 * View assigned sections for the active term.
-* Manage **gradebooks** with custom components
+* Manage gradebooks with custom components
   (Quiz, Midsem, Endsem…)
 * View class analytics:
   **Average, Highest, Lowest scores**.
@@ -115,10 +115,10 @@ src/
 #### **Admin**
 
 * Manage all users (Create / Edit / Delete Students & Instructors).
-* Manage **course catalog** (Create Courses).
+* Manage course catalog (Create Courses).
 * Schedule sections & assign instructors.
-* Toggle **System Maintenance Mode** (locks system to read-only).
-* Perform **Database Backup & Restore**.
+* Toggle System Maintenance Mode (locks system to read-only).
+* Perform Database Backup & Restore.
 
 ##  Final Grade Weighting Rule
 
@@ -147,7 +147,7 @@ Final grade is computed dynamically using the weighted sum of all instructor-def
 ---
 ##  Role & Maintenance Enforcement
 
-Security is enforced **strictly at the Service Layer**, making UI bypass impossible.
+Security is enforced strictly at the Service Layer, making UI bypass impossible.
 
 ### **Role Checks**
 
